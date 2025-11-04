@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>贪吃蛇游戏</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>贪吃蛇游戏</h1>
+        <div class="game-info">
+            <div class="score-board">
+                <span>得分: <span id="score">0</span></span>
+                <span>最高分: <span id="highScore">0</span></span>
+            </div>
+            <button id="startBtn" class="btn">开始游戏</button>
+            <button id="pauseBtn" class="btn" disabled>暂停</button>
+        </div>
+        <div class="speed-control">
+            <label for="speedSlider">
+                <span>游戏速度:</span>
+                <span id="speedValue">中速</span>
+            </label>
+            <input type="range" id="speedSlider" min="1" max="5" value="3" step="1">
+            <div class="speed-labels">
+                <span>慢</span>
+                <span>快</span>
+            </div>
+        </div>
+        <canvas id="gameCanvas" width="400" height="400"></canvas>
+        <div class="controls">
+            <p>使用方向键控制蛇的移动</p>
+            <div class="control-buttons">
+                <button class="control-btn" data-direction="up">↑</button>
+                <div class="control-row">
+                    <button class="control-btn" data-direction="left">←</button>
+                    <button class="control-btn" data-direction="down">↓</button>
+                    <button class="control-btn" data-direction="right">→</button>
+                </div>
+            </div>
+        </div>
+        <div class="instructions">
+            <h3>游戏说明:</h3>
+            <ul>
+                <li>使用方向键或点击按钮控制蛇的移动</li>
+                <li>拖动滑块调整游戏速度</li>
+                <li>吃到食物可以增长蛇的长度并得分</li>
+                <li>撞到墙壁或自己身体游戏结束</li>
+                <li>按空格键可以暂停/继续游戏</li>
+            </ul>
+        </div>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>
